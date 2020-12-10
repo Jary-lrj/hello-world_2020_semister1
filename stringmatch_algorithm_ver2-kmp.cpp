@@ -35,9 +35,13 @@ int getNext(char c[],int next[]) {
 		if (j == -1 || c[i] == c[j]) {
 			++i;
 			++j;
+			//next[i]=j: 
+			//the length of string is i-1 and its public longest prefix's length is j; 
 			next[i] = j;
 		}
 		else
+			//if these two chars failed to match, 
+			//the public longest prefix goes back to the char before current char.(?)
 			j = next[j];
 	}
 	return 0;
